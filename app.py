@@ -2,9 +2,14 @@ from flask import Flask, render_template, request
 import chatbot
 from chatbot import predict_class, get_response, intents
 from flask_cors import CORS
+import os
+
+app = Flask(__name__, template_folder=os.getcwd())
 
 app = Flask(__name__)
 CORS(app)
+app = Flask(__name__, template_folder=os.getcwd())
+
 
 @app.route('/')
 def home():
