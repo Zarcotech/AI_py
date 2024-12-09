@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request
 import chatbot
 from chatbot import predict_class, get_response, intents
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def home():
