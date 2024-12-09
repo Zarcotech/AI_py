@@ -1,0 +1,121 @@
+{
+    "intents": [
+        {
+            "tag": "greetings",
+            "patterns": ["hello", "hi", "what's up", "whats good", "yo", "good morning", "good afternoon", "good day", "good evening"],
+            "responses": ["Hello!", "Hi!", "How can I help?", "What can I do for you?", "Hey!"]
+        },
+        {
+            "tag": "name",
+            "patterns": ["whats your name", "who are you", "what should i call you"],
+            "responses": ["My name is Zarcotech AI.", "You can call me Zarcotech!", "Mine's Zarcotech AI"]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": ["goodbye", "bye", "see you", "take care", "catch you later"],
+            "responses": ["Goodbye!", "See you later!", "Take care!", "Catch you later!"]
+        },
+        {
+            "tag": "thanks",
+            "patterns": ["thank you", "thanks", "thanks a lot", "appreciate it"],
+            "responses": ["You're welcome!", "Glad I could help!", "Anytime!", "No problem!"]
+        },
+        {
+            "tag": "help",
+            "patterns": ["help", "can you help me", "I need help", "what can you do"],
+            "responses": ["Sure! How can I assist you?", "What do you need help with?", "I'm here to help!"]
+        },
+        {
+            "tag": "weather",
+            "patterns": ["what's the weather like", "is it going to rain", "how's the weather today", "will it be sunny"],
+            "responses": ["I don't have real-time weather updates, but you can check your local forecast!", "I recommend checking a weather service for the latest updates."]
+        },
+        {
+            "tag": "joke",
+            "patterns": ["tell me a joke", "make me laugh", "can you tell a joke", "tell me something funny"],
+            "responses": ["Why don't skeletons fight each other? They don't have the guts!", "Why did the scarecrow win an award? Because he was outstanding in his field!"]
+        },
+        {
+            "tag": "time",
+            "patterns": ["what time is it", "can you tell the time", "what's the time now"],
+            "responses": ["I can't check the time, but you can easily see it on your device!", "Try checking your phone or clock for the current time."]
+        },
+        {
+            "tag": "affirmation",
+            "patterns": ["yes", "sure", "okay", "alright", "sounds good"],
+            "responses": ["Great!", "Awesome!", "Perfect!", "Got it!"]
+        },
+        {
+            "tag": "quote",
+            "patterns": ["tell me a quote", "give me an inspiring quote", "share a motivational quote", "can I hear a quote"],
+            "responses": [
+                "“The only way to do great work is to love what you do.” – Steve Jobs",
+                "“Success is not the key to happiness. Happiness is the key to success.” – Albert Schweitzer",
+                "“It always seems impossible until it's done.” – Nelson Mandela"
+            ]
+        },
+        {
+            "tag": "facts",
+            "patterns": ["tell me a fact", "give me a random fact", "do you know any interesting facts", "share a fun fact"],
+            "responses": [
+                "Did you know? A group of flamingos is called a 'flamboyance.'",
+                "Here's a fun fact: Honey never spoils. Archaeologists have found pots of honey in ancient tombs that are over 3000 years old!",
+                "The Eiffel Tower can be 15 cm taller during the summer due to the expansion of iron in the heat."
+            ]
+        },
+        {
+            "tag": "movies",
+            "patterns": ["recommend a movie", "what movie should I watch", "suggest a good movie", "any good movies lately"],
+            "responses": [
+                "How about 'The Shawshank Redemption'? It's a classic!",
+                "If you're into action, I recommend 'Mad Max: Fury Road'.",
+                "You could watch 'Inception' if you enjoy mind-bending plots."
+            ]
+        },
+        {
+            "tag": "music",
+            "patterns": ["recommend a song", "what song should I listen to", "any good music lately", "suggest a song"],
+            "responses": [
+                "You should check out 'Blinding Lights' by The Weeknd!",
+                "How about 'Shape of You' by Ed Sheeran? It's a great tune!",
+                "If you like upbeat music, try 'Uptown Funk' by Mark Ronson ft. Bruno Mars."
+            ]
+        },
+        {
+            "tag": "tech",
+            "patterns": ["what's new in tech", "tell me about recent tech developments", "any cool tech news", "what's trending in tech"],
+            "responses": [
+                "Did you hear about the new AI breakthroughs in healthcare? It's making huge strides!",
+                "Quantum computing is evolving rapidly. It's an exciting field to follow!",
+                "There’s been a lot of buzz about the latest VR gadgets and their potential applications."
+            ]
+        },
+        {
+            "tag": "advice",
+            "patterns": ["give me advice", "can you offer some advice", "what's your advice on", "do you have any advice"],
+            "responses": [
+                "Sometimes, the best advice is to take a step back and breathe before making any big decisions.",
+                "Don't be afraid to fail – it's often the best way to learn and grow.",
+                "Keep a positive mindset and always look for solutions instead of focusing on problems."
+            ]
+        },
+        {
+            "tag": "history",
+            "patterns": ["tell me about history", "can you share a historical fact", "what happened in history on this day", "share something from the past", "history"],
+            "responses": [
+                "Did you know the first successful powered flight was by the Wright brothers in 1903?",
+                "In 1969, humans landed on the moon for the first time, marking a huge achievement in space exploration.",
+                "The Berlin Wall fell in 1989, symbolizing the end of the Cold War."
+            ]
+        },
+        {
+            "tag": "compliment",
+            "patterns": ["give me a compliment", "tell me something nice", "say something kind", "make me feel good"],
+            "responses": [
+                "You're doing amazing things! Keep up the great work!",
+                "You're awesome, don't forget it!",
+                "You're a superstar in everything you do!"
+            ]
+        }
+    ]
+}
