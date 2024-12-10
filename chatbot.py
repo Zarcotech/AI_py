@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.preprocessing import LabelEncoder
 from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.models import load_model
+import random
 
 nltk.download(['punkt', 'wordnet'])
 lemmatizer = WordNetLemmatizer()
