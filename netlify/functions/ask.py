@@ -1,5 +1,6 @@
 import json
 import sys
+
 sys.path.append('../../')
 
 from chatbot import predict_class, get_response, intents
