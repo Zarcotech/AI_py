@@ -20,24 +20,25 @@
         function sendMessage() {
             let userMessage = document.getElementById('user-message').value;
             let chatBox = document.getElementById('chat-box');
-
+    
             if (userMessage.trim() !== '') {
                 chatBox.innerHTML += `<div class="user-message">${userMessage}</div>`;
-
-                fetch('/ask', {
+    
+                fetch('/.netlify/functions/ask', {
                     method: 'POST',
-                    body: new URLSearchParams({ 'user_message': userMessage }),
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+                    body: JSON.stringify({ 'user_message': userMessage }),
+                    headers: { 'Content-Type': 'application/json' }
                 })
-                .then(response => response.text())
+                .then(response => response.json())
                 .then(data => {
-                    chatBox.innerHTML += `<div class="chatbot-response">${data}</div>`;
+                    chatBox.innerHTML += `<div class="chatbot-response">${data.response}</div>`;
                 })
                 .catch(error => console.error('Error:', error));
             }
-
+    
             document.getElementById('user-message').value = '';
         }
     </script>
+    
 </body>
 </html>
