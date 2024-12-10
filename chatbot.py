@@ -1,30 +1,21 @@
+import random
 import json
-import nltk
+import pickle
 import numpy as np
-from sklearn.preprocessing import LabelEncoder
+import nltk
 from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.models import load_model
-import random
 
-nltk.download(['punkt', 'wordnet'])
+nltk.download('punkt')
+nltk.download('wordnet')
+
 lemmatizer = WordNetLemmatizer()
 
-intents = json.loads(open('intents.json').read())
-words = []
-classes = []
-ignore_words = ['?', '!', '.', ',']
+with open('intents.json', 'r', encoding='utf-8') as f:
+    intents = json.load(f)
 
-for intent in intents['intents']:
-    for pattern in intent['patterns']:
-        word_list = nltk.word_tokenize(pattern)
-        words.extend(word_list)
-    classes.append(intent['tag'])
-
-words = [lemmatizer.lemmatize(w.lower()) for w in words if w not in ignore_words]
-words = sorted(list(set(words)))
-
-classes = sorted(list(set(classes)))
-
+words = pickle.load(open('words.pkl', 'rb'))
+classes = pickle.load(open('classes.pkl', 'rb'))
 model = load_model('chatbot_model.h5')
 
 def clean_up_sentence(sentence):
@@ -32,24 +23,32 @@ def clean_up_sentence(sentence):
     sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
     return sentence_words
 
-def bag_of_words(sentence, words):
+def bag_of_words(sentence):
     sentence_words = clean_up_sentence(sentence)
     bag = [0] * len(words)
-    for s in sentence_words:
+    for w in sentence_words:
         for i, word in enumerate(words):
-            if word == s:
+            if word == w:
                 bag[i] = 1
     return np.array(bag)
 
 def predict_class(sentence):
-    bow = bag_of_words(sentence, words)
-    return model.predict(np.array([bow]))[0]
+    bow = bag_of_words(sentence)
+    res = model.predict(np.array([bow]))[0]
+    ERROR_THRESHOLD = 0.25
+    results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
 
-def get_response(intents_list, intents):
-    intent_index = np.argmax(intents_list)
-    intent_tag = classes[intent_index]
-    response = ""
-    for intent in intents['intents']:
-        if intent_tag == intent['tag']:
-            response = random.choice(intent['responses'])
-    return response
+    results.sort(key=lambda x: x[1], reverse=True)
+    return_list = []
+    for r in results:
+        return_list.append({'intent': classes[r[0]], 'probabilaty': str(r[1])})
+    return return_list
+
+def get_response(intents_list, intents_json):
+    tag = intents_list[0]['intent']
+    list_of_intents = intents_json['intents']
+    for i in list_of_intents:
+        if i['tag'] == tag:
+            result = random.choice(i['responses'])
+            break
+    return result

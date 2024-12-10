@@ -1,30 +1,16 @@
-import json
-import sys
+from flask import Flask, request, jsonify
 
-sys.path.append('../../')
+app = Flask(__name__)
 
-from chatbot import predict_class, get_response, intents
+@app.route('/.netlify/functions/ask', methods=['POST'])
+def ask():
+    data = request.get_json()
+    message = data.get('message')
+    response = get_response(message)
+    return jsonify({"response": response})
 
-def handler(event, context):
-    try:
-        user_message = json.loads(event['body'])['user_message']
-        intents_list = predict_class(user_message)
-        response = get_response(intents_list, intents)
-        
-        return {
-            'statusCode': 200,
-            'body': json.dumps({'response': response}),
-            'headers': {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            }
-        }
-    except Exception as e:
-        return {
-            'statusCode': 500,
-            'body': json.dumps({'error': str(e)}),
-            'headers': {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            }
-        }
+def get_response(message):
+    return "This is a response to: " + message
+
+if __name__ == '__main__':
+    app.run(debug=True)

@@ -4,40 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatbot</title>
-    <link rel="stylesheet" href="static/style.css">
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #chat-box { border: 1px solid #ccc; height: 300px; padding: 10px; overflow-y: auto; }
+        .user-message { text-align: right; padding: 5px; background-color: #d3f8e2; border-radius: 5px; margin: 5px 0; }
+        .chatbot-response { text-align: left; padding: 5px; background-color: #f0f0f0; border-radius: 5px; margin: 5px 0; }
+    </style>
 </head>
 <body>
-    <div class="chat-container">
-        <form action="/ask" method="POST">
-            <div id="chat-box" class="chat-box"></div>
-        </form>
-        
-        <input type="text" id="user-message" placeholder="Type a message..." />
-        <button onclick="sendMessage()">Send</button>
-    </div>
 
-    <script>
-        function sendMessage() {
-            let userMessage = document.getElementById('user-message').value;
-            let chatBox = document.getElementById('chat-box');
+<h2>Chat with Bot</h2>
+<div id="chat-box"></div>
+<input type="text" id="user-message" placeholder="Type a message..." />
+<button onclick="sendMessage()">Send</button>
 
-            if (userMessage.trim() !== '') {
-                chatBox.innerHTML += `<div class="user-message">${userMessage}</div>`;
+<script>
+    function sendMessage() {
+        let userMessage = document.getElementById('user-message').value;
+        let chatBox = document.getElementById('chat-box');
 
-                fetch('/.netlify/functions/ask', {
-                    method: 'POST',
-                    body: JSON.stringify({ 'user_message': userMessage }),
-                    headers: { 'Content-Type': 'application/json' }
-                })
-                .then(response => response.json())
-                .then(data => {
-                    chatBox.innerHTML += `<div class="chatbot-response">${data.response}</div>`;
-                })
-                .catch(error => console.error('Error:', error));
-            }
+        if (userMessage.trim() !== '') {
+            chatBox.innerHTML += `<div class="user-message">${userMessage}</div>`;
 
-            document.getElementById('user-message').value = '';
+            fetch('/.netlify/functions/ask', {
+                method: 'POST',
+                body: JSON.stringify({ 'user_message': userMessage }),
+                headers: { 'Content-Type': 'application/json' }
+            })
+            .then(response => response.json())
+            .then(data => {
+                chatBox.innerHTML += `<div class="chatbot-response">${data.response}</div>`;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            })
+            .catch(error => console.error('Error:', error));
         }
-    </script>
+
+        document.getElementById('user-message').value = '';
+    }
+</script>
+
 </body>
 </html>
