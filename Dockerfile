@@ -1,11 +1,12 @@
-FROM python:3.9-slim
+# syntax=docker/dockerfile:1
 
-WORKDIR /app
+FROM python:3.8-slim-buster
 
-COPY . /app
+WORKDIR /python-docker
 
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
 
-EXPOSE 5000
+COPY . .
 
-CMD ["python", "main.py"]
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]

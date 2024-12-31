@@ -116,6 +116,204 @@
                 "You're awesome, don't forget it!",
                 "You're a superstar in everything you do!"
             ]
-        }
+        },
+        {
+            "tag": "insult",
+            "patterns": ["insult me", "say something mean", "be rude to me", "give me an insult"],
+            "responses": [
+                "I'm sorry, I can't do that. Let's keep things positive!",
+                "I'm here to spread positivity, not negativity.",
+                "I'd rather focus on uplifting and encouraging you!"
+            ]
+        },
+        {
+            "tag": "food",
+            "patterns": ["recommend a dish", "what should I eat", "suggest a meal", "any good recipes"],
+            "responses": [
+                "How about trying some homemade pasta? It's delicious!",
+                "You could make a healthy salad with fresh vegetables.",
+                "If you like spicy food, try making a curry!"
+            ]
+        },
+        {
+            "tag": "sports",
+            "patterns": ["tell me about sports", "what's happening in sports", "any sports news", "sports updates"],
+            "responses": [
+                "The latest football match had an exciting finish! You should check out the highlights.",
+                "Basketball season is in full swing. Have you been following the games?",
+                "There's a major tennis tournament coming up. It's going to be intense!"
+            ]
+        },
+        {
+            "tag": "travel",
+            "patterns": ["recommend a travel destination", "where should I travel", "suggest a vacation spot", "any good travel tips"],
+            "responses": [
+                "Have you considered visiting the beautiful beaches of Bali? It's a tropical paradise!",
+                "Exploring the historic streets of Rome can be an amazing experience.",
+                "If you're into adventure, a trip to the Amazon rainforest might be perfect for you!"
+            ]
+        },
+        {
+            "tag": "technology",
+            "patterns": ["tell me about technology", "what's the latest in technology", "any tech updates", "technology news"],
+            "responses": [
+                "Artificial intelligence is revolutionizing industries with its innovative applications.",
+                "The Internet of Things (IoT) is connecting devices and creating smart homes and cities.",
+                "Blockchain technology is transforming the way we handle transactions and data security."
+            ]
+        },
+        {
+            "tag": "health",
+            "patterns": ["give me health tips", "how can I stay healthy", "health advice", "tips for a healthy lifestyle"],
+            "responses": [
+                "Regular exercise and a balanced diet are key to maintaining good health.",
+                "Make sure to stay hydrated throughout the day for optimal well-being.",
+                "Getting enough sleep is crucial for your physical and mental health."
+            ]
+        },
+        {
+            "tag": "science",
+            "patterns": ["tell me about science", "what's new in science", "any recent scientific discoveries", "science updates"],
+            "responses": [
+                "Scientists have made significant progress in understanding climate change and its effects.",
+                "The field of genetics is advancing rapidly, with new breakthroughs in gene editing.",
+                "Astronomers have discovered exoplanets that could potentially support life."
+            ]
+        },
+        {
+            "tag": "education",
+            "patterns": ["tell me about education", "what's happening in education", "any education news", "education updates"],
+            "responses": [
+                "Online learning platforms are becoming more popular, offering a wide range of courses.",
+                "Educational technology is transforming the way students learn and engage with material.",
+                "There's a growing emphasis on STEM education to prepare students for future careers."
+            ]
+        },
+        {
+            "tag": "books",
+            "patterns": ["recommend a book", "what book should I read", "suggest a good book", "any good books lately"],
+            "responses": [
+                "You should read 'To Kill a Mockingbird' by Harper Lee. It's a classic!",
+                "If you enjoy fantasy, 'Harry Potter and the Sorcerer's Stone' by J.K. Rowling is a great choice.",
+                "For a thrilling read, try 'The Girl with the Dragon Tattoo' by Stieg Larsson."
+            ]
+        },
+        {
+            "tag": "fitness",
+            "patterns": ["give me fitness tips", "how can I stay fit", "fitness advice", "tips for staying in shape"],
+            "responses": [
+                "Consistency is key. Make sure to exercise regularly, even if it's just a short workout.",
+                "Incorporate both cardio and strength training into your routine for balanced fitness.",
+                "Don't forget to stretch before and after workouts to prevent injuries and improve flexibility."
+            ]
+        },
+        {
+            "tag": "programming",
+            "patterns": ["tell me about programming", "what's new in programming", "any programming tips", "programming updates"],
+            "responses": [
+            "Python continues to be a popular language due to its simplicity and versatility.",
+            "JavaScript frameworks like React and Angular are widely used for web development.",
+            "Machine learning and AI are hot topics in the programming world right now."
+            ]
+        },
+        {
+            "tag": "gaming",
+            "patterns": ["recommend a game", "what game should I play", "suggest a good game", "any good games lately"],
+            "responses": [
+            "If you enjoy open-world games, try 'The Legend of Zelda: Breath of the Wild'.",
+            "For a great multiplayer experience, 'Among Us' is a lot of fun with friends.",
+            "If you like strategy games, 'Civilization VI' is a fantastic choice."
+            ]
+        },
+        {
+            "tag": "politics",
+            "patterns": ["tell me about politics", "what's happening in politics", "any political news", "politics updates"],
+            "responses": [
+            "There's been a lot of discussion about recent policy changes and their impact on society.",
+            "Political leaders are addressing important issues like healthcare, climate change, and international relations.",
+            "Elections are coming up in many countries, leading to debates and discussions on various political topics."
+            ]
+        },
+        {
+            "tag": "art",
+            "patterns": ["tell me about art", "what's new in art", "any art updates", "art news"],
+            "responses": [
+            "Artists are exploring new mediums and techniques to create innovative works.",
+            "Art exhibitions and galleries are showcasing diverse and thought-provoking pieces.",
+            "Art plays a crucial role in expressing emotions, ideas, and cultural perspectives."
+            ]
+        },
+        {
+            "tag": "environment",
+            "patterns": ["tell me about the environment", "what's happening in the environment", "any environmental news", "environment updates"],
+            "responses": [
+            "Climate change is a pressing issue that requires global action to mitigate its effects.",
+            "Conservation efforts are crucial to protect endangered species and preserve biodiversity.",
+            "Sustainable practices like recycling and reducing waste are essential for a greener future."
+            ]
+        },
+        {
+            "tag": "animals",
+            "patterns": ["tell me about animals", "what's happening in the animal world", "any animal news", "animal updates"],
+            "responses": [
+            "Did you know that elephants are the largest land animals and have excellent memories?",
+            "Penguins mate for life and often propose to their partners with pebbles!",
+            "Cats have a unique grooming behavior called 'allogrooming' where they groom each other as a sign of affection."
+            ]
+        },
+        {
+            "tag": "space",
+            "patterns": ["tell me about space", "what's happening in space", "any space news", "space updates"],
+            "responses": [
+            "Space exploration continues to uncover new discoveries about our universe and beyond.",
+            "Astronomers are studying exoplanets to find potentially habitable worlds outside our solar system.",
+            "The James Webb Space Telescope is set to launch soon, promising groundbreaking insights into the cosmos."
+            ]
+        },
+        {
+            "tag": "technology",
+            "patterns": ["tell me about technology", "what's happening in technology", "any technology news", "technology updates"],
+            "responses": [
+            "Artificial intelligence is revolutionizing industries with its innovative applications.",
+            "The Internet of Things (IoT) is connecting devices and creating smart homes and cities.",
+            "Blockchain technology is transforming the way we handle transactions and data security."
+            ]
+        },
+        {
+            "tag": "science",
+            "patterns": ["tell me about science", "what's new in science", "any recent scientific discoveries", "science updates"],
+            "responses": [
+            "Scientists have made significant progress in understanding climate change and its effects.",
+            "The field of genetics is advancing rapidly, with new breakthroughs in gene editing.",
+            "Astronomers have discovered exoplanets that could potentially support life."
+            ]
+        },
+        {
+            "tag": "education",
+            "patterns": ["tell me about education", "what's happening in education", "any education news", "education updates"],
+            "responses": [
+            "Online learning platforms are becoming more popular, offering a wide range of courses.",
+            "Educational technology is transforming the way students learn and engage with material.",
+            "There's a growing emphasis on STEM education to prepare students for future careers."
+            ]
+        },
+        {
+            "tag": "books",
+            "patterns": ["recommend a book", "what book should I read", "suggest a good book", "any good books lately"],
+            "responses": [
+            "You should read 'To Kill a Mockingbird' by Harper Lee. It's a classic!",
+            "If you enjoy fantasy, 'Harry Potter and the Sorcerer's Stone' by J.K. Rowling is a great choice.",
+            "For a thrilling read"]
+        },
+                {
+                    "tag": "finance",
+                    "patterns": ["tell me about finance", "what's happening in finance", "any finance news", "finance updates"],
+                    "responses": [
+                        "The stock market has been quite volatile recently, with significant fluctuations in major indices.",
+                        "Cryptocurrency continues to be a hot topic, with new developments and regulations emerging.",
+                        "Personal finance tips: It's important to budget, save, and invest wisely for a secure financial future.", "I don't have any live finance information, but you can check financial news websites for the latest updates."
+                    ]
+                }
+
     ]
 }
