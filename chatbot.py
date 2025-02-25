@@ -16,7 +16,7 @@ with open('intents.json', 'r', encoding='utf-8') as f:
 
 words = pickle.load(open('words.pkl', 'rb'))
 classes = pickle.load(open('classes.pkl', 'rb'))
-model = load_model('chatbot_model.h5')
+model = load_model('chatbot_model.keras')
 
 def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
@@ -52,3 +52,9 @@ def get_response(intents_list, intents_json):
             result = random.choice(i['responses'])
             break
     return result
+
+while True:
+	message = input("")
+	ints = predict_class(message)
+	res = get_response(ints, intents)
+	print(res)
